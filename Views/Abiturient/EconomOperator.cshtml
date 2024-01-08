@@ -1,0 +1,290 @@
+﻿
+@model List<Abiturient>
+@{
+    Layout = "LayoutOperator";
+}
+<label for="specialty"><h4>Специальность</h4></label>
+<br />
+<select id="specialty" name="specialtyId"></select>
+<br />
+<br />
+
+<label for="sorting"><h4>Сортировать</h4></label>
+<br />
+<select id="sorting" onchange="sortAbiturients(this.value)">
+    <option value="nameAsc">По имени А-Я</option>
+    <option value="nameDesc">По имени Я-А</option>
+    <option value="examResults">По результатам ЕГЭ</option>
+    <option value="medGold">Золотая медаль</option>
+    <option value="medSilver">Серебряная медаль</option>
+    <option value="colDip">Диплом колледжа</option>
+
+</select>
+<br />
+
+<br />
+
+
+<table>
+    <thead>
+        <tr>
+            <th><b>Фамилия</b></th>
+            <th><b>Имя</b></th>
+            <th><b>Отчество</b></th>
+            <th><b>Золотая медаль</b></th>
+            <th><b>Серебряная медаль</b></th>
+            <th><b>Диплом техникума</b></th>
+            <th><b>Окончание школы/техникума</b></th>
+            <th><b>1-й экзамен</b></th>
+            <th><b>2-й экзамен</b></th>
+            <th><b>3-й экзамен</b></th>
+            <th><b>Всего</b></th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+<br />
+<br />
+<h3><a class="add-button" asp-area="" asp-controller="Abiturient" asp-action="AddEconomOperator">Добавить запись</a></h3>
+ </div>
+
+<style>
+    .change-button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: white;
+        color: black;
+        text-decoration: none;
+        border: 1px solid black;
+    }
+
+    .add-button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #f5f5dc;
+        color: black;
+        text-decoration: none;
+    @*для удаления подкчеркивания в надписи*@ border: 1px solid black;
+    }
+
+    td, th {
+        padding: 10px;
+        border: 1px solid black;
+    }
+
+    th {
+        font-size: 20px;
+        font-weight: 400;
+    }
+</style>
+
+<script>
+    var currentSortBy = 'nameAsc'; // Устанавливаем значение по умолчанию
+
+    function loadExamTitles(specialtyId) {
+        fetch('/Abiturient/GetSpecialityById?specId=' + specialtyId)
+            .then(response => response.json())
+            .then(specialityData => {
+                var examHeaders = document.querySelectorAll('b'); // Получаем заголовки таблицы
+                if (examHeaders.length >= 10) { // Проверяем, что заголовки экзаменов есть в таблице (10 - это индекс первого экзамена, начиная с нуля)
+
+                    examHeaders[7].textContent = specialityData.specFirstExam; // Заменяем текст заголовков
+                    examHeaders[8].textContent = specialityData.specSecondExam;
+                    examHeaders[9].textContent = specialityData.specThirdExam;
+                }
+            })
+            .catch(error => console.error('Ошибка получения данных о специальности:', error));
+    }
+
+    document.getElementById('specialty').addEventListener('change', function () {
+        var specialtyId = this.value;
+
+        if (specialtyId === 'all') {
+            filterAbiturientsBySpecialty(0);
+        } else {
+            filterAbiturientsBySpecialty(parseInt(specialtyId));
+            loadExamTitles(parseInt(specialtyId)); // Вызываем функцию для замены заголовков при выборе специальности
+        }
+    });
+
+    function loadSpecialties() {
+        var selectSpecialty = document.getElementById('specialty');
+        selectSpecialty.innerHTML = '';
+
+        fetch('/Abiturient/GetSpecialties?facultyId=2') // Используем id=1 для "Института Цифровых Систем"
+            .then(response => response.json())
+            .then(data => {
+                data.forEach(function (specialty) {
+                    var option = document.createElement('option');
+                    option.value = specialty.specId;
+                    option.textContent = specialty.specName;
+                    selectSpecialty.appendChild(option);
+                });
+
+                if (data.length > 0) {
+                    selectSpecialty.selectedIndex = 0;
+                    var specialtyId = selectSpecialty.value;
+                    filterAbiturientsBySpecialty(parseInt(specialtyId));
+                }
+            })
+            .catch(error => console.error('Ошибка:', error));
+    }
+
+    function filterAbiturientsBySpecialty(specialtyId) {
+        var url = '/Abiturient/GetAbiturients?SpecId=' + specialtyId;
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                displayAbiturients(data);
+                sortAbiturients(currentSortBy); // Используем сохраненный метод сортировки для применения к новым данным
+            })
+            .catch(error => console.error('Ошибка:', error));
+    }
+
+
+    function displayAbiturients(data) {
+        sorting.value = "nameAsc";
+
+        var tableBody = document.querySelector('tbody');
+        tableBody.innerHTML = '';
+
+        data.forEach(function (abiturient) {
+            var row = document.createElement('tr');
+
+            // Ячейки для отображения данных абитуриента
+            var surnameCell = document.createElement('td');
+            surnameCell.textContent = abiturient.abiturientSurname;
+            row.appendChild(surnameCell);
+
+            var nameCell = document.createElement('td');
+            nameCell.textContent = abiturient.abiturientName;
+            row.appendChild(nameCell);
+
+            var fatherNameCell = document.createElement('td');
+            fatherNameCell.textContent = abiturient.abiturientPoBatyushke;
+            row.appendChild(fatherNameCell);
+
+            var goldMedalCell = document.createElement('td');
+            goldMedalCell.style.textAlign = 'center';
+            goldMedalCell.textContent = abiturient.abiturientGoldMedal ? '+' : '-';
+            row.appendChild(goldMedalCell);
+
+            var silverMedalCell = document.createElement('td');
+            silverMedalCell.style.textAlign = 'center';
+            silverMedalCell.textContent = abiturient.abiturientSilverMedal ? '+' : '-';
+            row.appendChild(silverMedalCell);
+
+            var techDiplomaCell = document.createElement('td');
+            techDiplomaCell.style.textAlign = 'center';
+            techDiplomaCell.textContent = abiturient.abiturientTechDiplom ? '+' : '-';
+            row.appendChild(techDiplomaCell);
+
+            var secYearCell = document.createElement('td');
+            secYearCell.style.textAlign = 'center';
+            secYearCell.textContent = abiturient.abiturientSecYear;
+            row.appendChild(secYearCell);
+
+
+            tableBody.appendChild(row); // Добавляем строку с данными абитуриента в таблицу
+
+            // Добавляем запрос для получения результатов экзаменов для каждого абитуриента
+            fetch('/Abiturient/GetExamsByAbiturientId?abiturientId=' + abiturient.abiturientId)
+                .then(response => response.json())
+                .then(examsData => {
+                    // Создаем ячейки для результатов экзаменов
+                    var exam1Cell = document.createElement('td');
+                    exam1Cell.style.textAlign = 'center';
+                    exam1Cell.textContent = examsData.chosenFirstExam; // Обратите внимание на регистр свойств
+
+                    var exam2Cell = document.createElement('td');
+                    exam2Cell.style.textAlign = 'center';
+                    exam2Cell.textContent = examsData.chosenSecondExam; // Обратите внимание на регистр свойств
+
+                    var exam3Cell = document.createElement('td');
+                    exam3Cell.style.textAlign = 'center';
+                    exam3Cell.textContent = examsData.chosenThirdExam; // Обратите внимание на регистр свойств
+
+                    var exam4Cell = document.createElement('td');
+                    exam4Cell.style.textAlign = 'center';
+                    exam4Cell.textContent = examsData.chosenFirstExam + examsData.chosenSecondExam + examsData.chosenThirdExam; // Обратите внимание на регистр свойств
+                    // Добавляем созданные ячейки в строку с данными абитуриента
+                    row.appendChild(exam1Cell);
+                    row.appendChild(exam2Cell);
+                    row.appendChild(exam3Cell);
+                    row.appendChild(exam4Cell);
+                    row.appendChild(deleteCell);
+                    changeCell.appendChild(changeLink);
+                    row.appendChild(changeCell);
+
+                })
+                .catch(error => console.error('Ошибка получения данных об экзаменах:', error));
+        });
+    }
+
+    function showAllAbiturients() {
+        filterAbiturientsBySpecialty(1);
+    }
+
+    function sortAbiturients(sortBy) {
+        var tableBody = document.querySelector('tbody');
+        var rows = Array.from(tableBody.querySelectorAll('tr'));
+
+        switch (sortBy) {
+            case 'nameAsc':
+                rows.sort((a, b) => {
+                    return a.cells[1].textContent.localeCompare(b.cells[1].textContent); // Сортировка по имени абитуриента (столбец №1)
+                });
+                break;
+            case 'nameDesc':
+                rows.sort((a, b) => {
+                    return b.cells[1].textContent.localeCompare(a.cells[1].textContent); // Сортировка по имени абитуриента в обратном порядке
+                });
+                break;
+            case 'examResults':
+                rows.sort((a, b) => {
+                    return parseInt(b.cells[10].textContent) - parseInt(a.cells[10].textContent); // Сортировка по результатам ЕГЭ (столбец №10)
+                });
+                break;
+            case 'medGold':
+                rows.sort((a, b) => {
+                    // Сортировка по наличию золотой медали (+/-)
+                    return b.cells[3].textContent.localeCompare(a.cells[3].textContent);
+                });
+                break;
+            case 'medSilver':
+                rows.sort((a, b) => {
+                    // Сортировка по наличию серебряной медали (+/-)
+                    return b.cells[4].textContent.localeCompare(a.cells[4].textContent);
+                });
+                break;
+            case 'colDip':
+                rows.sort((a, b) => {
+                    // Сортировка по наличию диплома колледжа (+/-)
+                    return b.cells[5].textContent.localeCompare(a.cells[5].textContent);
+                });
+                break;
+            default:
+                // По умолчанию сортировка по имени абитуриента в порядке А-Я
+                rows.sort((a, b) => {
+                    return a.cells[1].textContent.localeCompare(b.cells[1].textContent);
+                });
+                break;
+
+        }
+
+        // Удаляем текущие строки из таблицы
+        tableBody.innerHTML = '';
+
+        // Добавляем отсортированные строки в таблицу
+        rows.forEach(row => {
+            tableBody.appendChild(row);
+        });
+    }
+
+    window.onload = function () {
+        loadExamTitles(4)
+        loadSpecialties();
+        showAllAbiturients();
+    };
+</script>

@@ -1,0 +1,217 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = MVCAbit
+build_property.RootNamespace = MVCAbit
+build_property.ProjectDir = D:\Sources\MVCAbit\
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\Sources\MVCAbit
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/Sources/MVCAbit/Views/Abiturient/add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJpdHVyaWVudFxhZGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sources/MVCAbit/Views/Abiturient/AddDig.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJpdHVyaWVudFxBZGREaWcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sources/MVCAbit/Views/Abiturient/AddDigOperator.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJpdHVyaWVudFxBZGREaWdPcGVyYXRvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sources/MVCAbit/Views/Abiturient/AddEconom.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJpdHVyaWVudFxBZGRFY29ub20uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sources/MVCAbit/Views/Abiturient/AddEconomOperator.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJpdHVyaWVudFxBZGRFY29ub21PcGVyYXRvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sources/MVCAbit/Views/Abiturient/AddMath.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJpdHVyaWVudFxBZGRNYXRoLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sources/MVCAbit/Views/Abiturient/AddMathOperator.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJpdHVyaWVudFxBZGRNYXRoT3BlcmF0b3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sources/MVCAbit/Views/Abiturient/AddOperator.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJpdHVyaWVudFxBZGRPcGVyYXRvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sources/MVCAbit/Views/Abiturient/AddXim.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJpdHVyaWVudFxBZGRYaW0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sources/MVCAbit/Views/Abiturient/AddXimOperator.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJpdHVyaWVudFxBZGRYaW1PcGVyYXRvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sources/MVCAbit/Views/Abiturient/ChangeAdm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJpdHVyaWVudFxDaGFuZ2VBZG0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sources/MVCAbit/Views/Abiturient/ChangeAdmChecker.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJpdHVyaWVudFxDaGFuZ2VBZG1DaGVja2VyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sources/MVCAbit/Views/Abiturient/ChangeDig.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJpdHVyaWVudFxDaGFuZ2VEaWcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sources/MVCAbit/Views/Abiturient/ChangeDigChecker.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJpdHVyaWVudFxDaGFuZ2VEaWdDaGVja2VyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sources/MVCAbit/Views/Abiturient/ChangeEconom.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJpdHVyaWVudFxDaGFuZ2VFY29ub20uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sources/MVCAbit/Views/Abiturient/ChangeEconomChecker.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJpdHVyaWVudFxDaGFuZ2VFY29ub21DaGVja2VyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sources/MVCAbit/Views/Abiturient/ChangeMath.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJpdHVyaWVudFxDaGFuZ2VNYXRoLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sources/MVCAbit/Views/Abiturient/ChangeMathChecker.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJpdHVyaWVudFxDaGFuZ2VNYXRoQ2hlY2tlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sources/MVCAbit/Views/Abiturient/ChangeXim.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJpdHVyaWVudFxDaGFuZ2VYaW0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sources/MVCAbit/Views/Abiturient/ChangeXimChecker.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJpdHVyaWVudFxDaGFuZ2VYaW1DaGVja2VyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sources/MVCAbit/Views/Abiturient/Dig.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJpdHVyaWVudFxEaWcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sources/MVCAbit/Views/Abiturient/DigChecker.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJpdHVyaWVudFxEaWdDaGVja2VyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sources/MVCAbit/Views/Abiturient/DigOperator.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJpdHVyaWVudFxEaWdPcGVyYXRvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sources/MVCAbit/Views/Abiturient/Econom.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJpdHVyaWVudFxFY29ub20uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sources/MVCAbit/Views/Abiturient/EconomChecker.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJpdHVyaWVudFxFY29ub21DaGVja2VyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sources/MVCAbit/Views/Abiturient/EconomOperator.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJpdHVyaWVudFxFY29ub21PcGVyYXRvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sources/MVCAbit/Views/Abiturient/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJpdHVyaWVudFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sources/MVCAbit/Views/Abiturient/IndexChecker.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJpdHVyaWVudFxJbmRleENoZWNrZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sources/MVCAbit/Views/Abiturient/IndexOperator.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJpdHVyaWVudFxJbmRleE9wZXJhdG9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sources/MVCAbit/Views/Abiturient/Math.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJpdHVyaWVudFxNYXRoLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sources/MVCAbit/Views/Abiturient/MathChecker.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJpdHVyaWVudFxNYXRoQ2hlY2tlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sources/MVCAbit/Views/Abiturient/MathOperator.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJpdHVyaWVudFxNYXRoT3BlcmF0b3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sources/MVCAbit/Views/Abiturient/Xim.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJpdHVyaWVudFxYaW0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sources/MVCAbit/Views/Abiturient/XimChecker.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJpdHVyaWVudFxYaW1DaGVja2VyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sources/MVCAbit/Views/Abiturient/XimOperator.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJpdHVyaWVudFxYaW1PcGVyYXRvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sources/MVCAbit/Views/Account/IndexAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxJbmRleEFkbWluLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sources/MVCAbit/Views/Account/IndexChecker.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxJbmRleENoZWNrZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sources/MVCAbit/Views/Account/IndexOperator.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxJbmRleE9wZXJhdG9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sources/MVCAbit/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sources/MVCAbit/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sources/MVCAbit/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sources/MVCAbit/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sources/MVCAbit/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sources/MVCAbit/Views/Shared/LayoutChecker.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXExheW91dENoZWNrZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sources/MVCAbit/Views/Shared/LayoutLogin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXExheW91dExvZ2luLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sources/MVCAbit/Views/Shared/LayoutOperator.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXExheW91dE9wZXJhdG9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sources/MVCAbit/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sources/MVCAbit/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sources/MVCAbit/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sources/MVCAbit/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-4gsic13zlw

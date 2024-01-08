@@ -1,0 +1,138 @@
+﻿@model Abiturient
+@{
+    Layout = "LayoutOperator";
+}
+<h1>Добавление абитуриента</h1>
+
+<form method="post" asp-action="IndexOperator">
+    <label><h3>Личные данные</h3></label><br />
+    <label>Фамилия</label><br />
+    <input type="text" name="surname" /><br /><br />
+    <label>Имя</label><br />
+    <input type="text" name="name" /><br /><br />
+    <label>Отчество</label><br />
+    <input type="text" name="papochka" /><br /><br />
+    <label>Ссылка на фотографию</label><br />
+    <input type="text" name="link" /><br /><br />
+
+    <label><h3>Адрес абитуриента</h3></label><br />
+    <label>Город</label><br />
+    <input type="text" name="city" /><br /><br />
+    <label>Улица</label><br />
+    <input type="text" name="street" /><br /><br />
+    <label>Номер дома</label><br />
+    <input type="number" min="1" name="num" /><br /><br />
+
+    <label><h3>Сведения об оконченном среднем учебном заведении</h3></label><br />
+    <label>Название</label><br />
+    <input type="text" name="namesec" /><br /><br />
+    <label>Номер</label><br />
+    <input type="number" min="1" name="numsec" /><br /><br />
+    <label>Город</label><br />
+    <input type="text" name="citysec" /><br /><br />
+    <label>Дата окончания среднего учебного заведения</label><br />
+    <input type="number" min="1970" name="dateOfEnd" /><br /><br />
+    <label>Медаль/Диплом об окончании колледжа</label><br />
+    <select id="medalType" name="medalType">
+        <option value="Net">Нет</option>
+        <option value="Gold">Золотая медаль</option>
+        <option value="Silver">Серебряная медаль</option>
+        <option value="CollegeDiploma">Диплом об окончании колледжа</option>
+    </select><br /><br />
+
+    <label><h3>Данные для поступления</h3></label><br />
+    <!-- Выбор факультета -->
+    <label for="faculty" id="faculty" name="facultyId" style="font-weight:500; font-size:20px;">Институт Цифровых Систем</label><br />
+
+    <!-- Выбор специальности -->
+    <label for="specialty" id="faculty" name="facultyId">Специальность</label><br />
+    <select id="specialty" name="specialtyId">
+    </select><br /><br />
+
+    <!-- Панель с экзаменами -->
+    <label><h5>Результаты экзаменов</h5></label><br />
+
+    <div id="examsPanel">
+        <div>
+
+            <input type="number" id="firstExamText" min="0" max="100" name="firstExam" style="width: 150px" /><br /><br />
+        </div>
+        <div>
+
+            <input type="number" id="secondExamText" min="0" max="100" name="secondExam" style="width: 150px" /><br /><br />
+        </div>
+        <div>
+
+            <input type="number" id="thirdExamText" min="0" max="100" name="thirdExam" style="width: 150px" /><br /><br />
+        </div>
+    </div>
+
+    <input type="submit" value="Отправить" />
+</form>
+
+
+<script>
+    function fetchData(url, callback) {
+        fetch(url)
+            .then(response => response.json())
+            .then(data => callback(data))
+            .catch(error => console.error('Ошибка:', error));
+    }
+
+    function loadSpecialties(facultyId) {
+        var url = '/Abiturient/GetSpecialties?facultyId=' + facultyId;
+
+        fetchData(url, function (data) {
+            var selectSpecialty = document.getElementById('specialty');
+            selectSpecialty.innerHTML = '';
+
+            data.forEach(function (specialty) {
+                var option = document.createElement('option');
+                option.value = specialty.specId;
+                option.textContent = specialty.specName;
+                selectSpecialty.appendChild(option);
+            });
+
+            if (data.length > 0) {
+                selectSpecialty.selectedIndex = 0;
+                var specialtyId = selectSpecialty.value;
+                updatePlaceholderValues(specialtyId);
+            }
+        });
+    }
+
+    function updatePlaceholderValues(specialtyId) {
+        var url = '/Abiturient/GetSpecialtyDetails?specialtyId=' + specialtyId;
+
+        fetchData(url, function (data) {
+            var examsPanel = document.getElementById('examsPanel');
+            examsPanel.style.display = 'block';
+
+            var firstExamText = document.getElementById('firstExamText');
+            var secondExamText = document.getElementById('secondExamText');
+            var thirdExamText = document.getElementById('thirdExamText');
+
+            firstExamText.placeholder = data.specFirstExam || 'Предмет первого экзамена';
+            secondExamText.placeholder = data.specSecondExam || 'Предмет второго экзамена';
+            thirdExamText.placeholder = data.specThirdExam || 'Предмет третьего экзамена';
+        });
+    }
+
+    window.onload = function () {
+        var facultyId = document.getElementById('faculty').value;
+        var specialtyId = document.getElementById('specialty').value;
+
+        loadSpecialties(1);
+        updatePlaceholderValues(specialtyId);
+
+        document.getElementById('faculty').addEventListener('change', function () {
+            var facultyId = this.value;
+            loadSpecialties(1);
+        });
+
+        document.getElementById('specialty').addEventListener('change', function () {
+            var specialtyId = this.value;
+            updatePlaceholderValues(specialtyId);
+        });
+    };
+</script>
